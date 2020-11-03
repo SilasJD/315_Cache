@@ -41,9 +41,9 @@ begin
     inv_1: inverter port map(row_in(0), bit1_not);
     inv_2: inverter port map(row_in(1), bit2_not);
 
-    and3_1: and3 port map(bit2_not, bit3_not, row_out(0));
-    and3_2: and3 port map(bit2_not, row_in(1), row_out(1));
-    and3_3: and3 port map(row_in(0), bit3_not, row_out(2));
-    and3_4: and3 port map(row_in(0), row_in(1), row_out(3));
+    and2_1: and2 port map(bit2_not, bit3_not, row_out(0));
+    and2_2: and2 port map(bit2_not, row_in(1), row_out(1));
+    and2_3: and2 port map(row_in(0), bit3_not, row_out(2));
+    and2_4: and2 port map(row_in(0), row_in(1), row_out(3));
 
 end structural;

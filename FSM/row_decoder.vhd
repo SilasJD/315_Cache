@@ -23,12 +23,13 @@ component inverter
 
 end component;
 
-component and2
+component and3
   port (
     input1   : in  std_logic;
     input2   : in  std_logic;
     input3   : in  std_logic;
     output   : out std_logic);
+
 end component;
 
 for and3_1, and3_2, and3_3, and3_4, and3_5, and3_6, and3_7, and3_8: and3 use entity work.and3(structural)
@@ -39,8 +40,8 @@ signal bit1_not, bit2_not, bit3_not: std_logic;
 begin
 
   inv_1: inverter port map(row_in(0), bit1_not);
-  inv_1: inverter port map(row_in(1), bit2_not);
-  inv_1: inverter port map(row_in(2), bit3_not);
+  inv_2: inverter port map(row_in(1), bit2_not);
+  inv_3: inverter port map(row_in(2), bit3_not);
 
   and3_1: and3 port map(bit1_not, bit2_not, bit3_not, row_out(0));
   and3_2: and3 port map(bit1_not, bit2_not, row_in(2), row_out(1));
